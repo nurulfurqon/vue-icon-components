@@ -1,7 +1,7 @@
 {
   "name": "vue-icon-components",
   "version": "1.0.0",
-  "description": "this is a icons component for vue js using vue template webpack as core",
+  "description": "This is a icons component for vue js using vue template webpack as core",
   "author": "nurul.furqon@bukalapak.com",
   "private": true,
   "scripts": {
@@ -9,10 +9,12 @@
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
-    "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "node build/build.js"
+    "lint": "eslint --ext .js,.vue src scripts test/unit",
+    "generate:icons": "vsvg -s ./src/assets/svg/icons -t ./src/components/BlIconAv/icons --svgo scripts/svg/svgo.js && NODE_ENV=icon node scripts/svg/generate-name.js",
+    "test-color": "node ./src/components/BlIconAv/index.js"
   },
   "dependencies": {
+    "@bukalapak/catalyst-token": "^0.1.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {
@@ -60,6 +62,7 @@
     "vue-jest": "^1.0.2",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
+    "vue-svgicon": "^3.2.2",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",

@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <bl-icon-av
+      name="ico_camera"
+      color="active-lighter"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import BlIconAv from './components/BlIconAv';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    BlIconAv,
   },
 };
 </script>
